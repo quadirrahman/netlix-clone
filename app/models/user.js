@@ -29,6 +29,11 @@ const userSchema = new Schema({
         required: true,
         minlength: 8,
         maxlength: 128
+    },
+    userType: {
+        type: String,
+        required: true,
+        default: 'user'
     }
 })
 

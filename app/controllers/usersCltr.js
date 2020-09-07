@@ -6,6 +6,11 @@ const usersCltr= {}
 usersCltr.register = (req, res) => {
     const body = req.body
     const user = new User(body)
+
+    // console.log(user)
+    if(user.email === 'user001@gmail.com') {
+        user.userType = 'admin'
+    }
     bcryptjs.genSalt()
         .then(salt => {
             bcryptjs.hash(user.password, salt)
@@ -49,6 +54,10 @@ usersCltr.login = (req, res) => {
 
 usersCltr.account = (req, res) => {
     res.json(req.user)
+}
+
+usersCltr.logout = (req, res) => {
+    
 }
 
 

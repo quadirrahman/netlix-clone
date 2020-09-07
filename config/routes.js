@@ -20,7 +20,7 @@ router.delete('/api/articles/:id', articlesCltr.destroy)
 router.post('/api/users/register', usersCltr.register)
 router.post('/api/users/login', usersCltr.login)
 router.get('/api/users/account', authenticateUser, usersCltr.account)
-
+router.delete('/api/users/logout', authenticateUser, usersCltr.logout)
 module.exports = router
 
 
